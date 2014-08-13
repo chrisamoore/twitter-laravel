@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://api.twitter.dev',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -122,6 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+        'Dingo\Api\ApiServiceProvider',
+
 	),
 
 	/*
@@ -157,7 +159,7 @@ return array(
 		'Cache'             => 'Illuminate\Support\Facades\Cache',
 		'ClassLoader'       => 'Illuminate\Support\ClassLoader',
 		'Config'            => 'Illuminate\Support\Facades\Config',
-		'Controller'        => 'Illuminate\Routing\Controller',
+		//'Controller'        => 'Illuminate\Routing\Controller',
 		'Cookie'            => 'Illuminate\Support\Facades\Cookie',
 		'Crypt'             => 'Illuminate\Support\Facades\Crypt',
 		'DB'                => 'Illuminate\Support\Facades\DB',
@@ -188,6 +190,13 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+
+        'User'              => 'Twitter\Api\User\User',
+        'Tweet'             => 'Twitter\Api\Tweet\Tweet',
+        'Message'           => 'Twitter\Api\Message\Message',
+
+        'API' => 'Dingo\Api\Facades\API',
+        'Controller' => 'Dingo\Api\Routing\Controller',
 
 	),
 
