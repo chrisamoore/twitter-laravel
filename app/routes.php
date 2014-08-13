@@ -15,3 +15,19 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+
+Route::group(['before' => 'twitter'], function () {
+
+    Route::api(['version' => 'v1', 'protected' => true], function () {
+
+        Route::resource('users', '\\Twitter\\Api\\User\\UsersController');
+        Route::resource('tweets', '\\Twitter\\Api\\Tweet\\TweetsController');
+        Route::resource('messages', '\\Twitter\\Api\\Message\\MessagesController');
+
+        Route::get('users/{id}/tweets', '\\Twitter\\Api\\User\\UsersController@tweets');
+        Route::get('users/{id}/messagesfrom', '\\Twitter\\Api\\User\\UsersController@messagesFrom');
+        Route::get('users/{id}/messagesto', '\\Twitter\\Api\\User\\UsersController@messagesTo');
+    });
+});
+
