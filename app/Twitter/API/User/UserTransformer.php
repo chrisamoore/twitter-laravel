@@ -16,6 +16,12 @@ class UserTransformer extends TransformerAbstract {
         return [
             'id'               => (int) $resource->id,
             'email'            => (string) $resource->email,
+            'name'             => (string) $resource->name,
+            'handle'           => (string) $resource->handle,
+            'profile_photo'    => (string) $resource->profile_photo,
+            'background_photo' => (string) $resource->background_photo,
+            'bio'              => (string) $resource->bio,
+            'website'          => (string) $resource->website,
             'active'           => (boolean) $resource->active,
             'activation_token' => (string) $resource->activation_token,
             'created_at'       => (string) $resource->created_at,
