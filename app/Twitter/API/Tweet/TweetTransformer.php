@@ -28,7 +28,7 @@ class TweetTransformer extends TransformerAbstract {
         return [
             'id'                => (int) $resource->id,
             'user_id'           => (int) $resource->user_id,
-            'original_tweet_id' => (int) $resource->original_tweet_id,
+            'original_tweet_id' => $resource->original_tweet_id,
             'message'           => (string) $resource->message,
             'created_at'        => (string) $resource->created_at,
             '_links'            => $this->hateoas($resource)

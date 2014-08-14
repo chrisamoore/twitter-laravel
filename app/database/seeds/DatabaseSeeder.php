@@ -19,6 +19,18 @@ class DatabaseSeeder extends Seeder {
         $faker = Faker::create();
 
         $users = [];
+
+        $users[] = User::create([
+            "email" => "nickknol@gmail.com",
+            "handle" => "nickknol",
+            "profile_photo" => $faker->imageUrl(),
+            "background_photo" => $faker->imageUrl(),
+            "bio" => "I am a car ninja!!",
+            "website" => "http://www.nickknol.com",
+            "active" => true,
+            "password" => "password",
+        ]);
+
         foreach (range(1, 5) as $index) {
             $users[] = User::create([
                 "email" => $faker->email(),
@@ -36,7 +48,7 @@ class DatabaseSeeder extends Seeder {
         foreach ($users as $user) {
 
             $tweets[$user->id] = [];
-            foreach (range(1, 50) as $index) {
+            foreach (range(1, 10) as $index) {
 
                 $tweets[$user->id][] = Tweet::create([
                     "user_id" => $user->id,
@@ -50,7 +62,7 @@ class DatabaseSeeder extends Seeder {
         foreach ($users as $fromUser) {
 
             $messages[$user->id] = [];
-            foreach (range(1, 50) as $index) {
+            foreach (range(1, 10) as $index) {
 
                 $key = array_rand($users);
                 $toUser = $users[$key];

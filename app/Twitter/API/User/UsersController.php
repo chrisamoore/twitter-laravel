@@ -28,4 +28,11 @@ class UsersController extends ApiController {
 
         return $user->messagesTo()->get();
     }
+
+    public function favorites($userId) {
+
+        $user = User::find($userId);
+
+        return $user->favorites();
+    }
 }

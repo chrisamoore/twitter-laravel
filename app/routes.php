@@ -28,6 +28,7 @@ Route::group(['before' => 'twitter'], function () {
         Route::get('users/{id}/tweets', '\\Twitter\\Api\\User\\UsersController@tweets');
         Route::get('users/{id}/messagesfrom', '\\Twitter\\Api\\User\\UsersController@messagesFrom');
         Route::get('users/{id}/messagesto', '\\Twitter\\Api\\User\\UsersController@messagesTo');
+        Route::get('users/{id}/favorites', '\\Twitter\\Api\\User\\UsersController@favorites');
     });
 });
 
